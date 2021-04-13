@@ -2,11 +2,11 @@ Uuid: b89968942a3e4cab916b6c761beb2003
 ExtensionType: 1
 Name: Autowasp
 RepoName: autowasp
-ScreenVersion: 1.0
-SerialVersion: 1
+ScreenVersion: 1.0.1
+SerialVersion: 3
 MinPlatformVersion: 0
-ProOnly: False
-Author: Thomas Lim
+ProOnly: True
+Author: GovTech (Thomas Lim)
 ShortDescription: Integrates Burp issues logging, with OWASP Web Security Testing Guide (WSTG), to provide a streamlined web security testing flow for the modern-day penetration tester!
 EntryPoint: target/autowasp-1.0-SNAPSHOT-jar-with-dependencies.jar
 BuildCommand: mvn clean compile assembly:single
