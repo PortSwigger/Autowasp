@@ -25,6 +25,7 @@ public class ChecklistEntry implements Serializable {
 	public String category;
 	public String testName;
 	public boolean exclusion;
+	public boolean testcaseCompleted;
 	public String summaryHTML;
 	public String howToTestHTML;
 	public String referencesHTML;
@@ -43,6 +44,7 @@ public class ChecklistEntry implements Serializable {
 		this.howToTestHTML = contentElements.get("how to test");
 		this.referencesHTML = contentElements.get("references");
 		this.exclusion = false;
+		this.testcaseCompleted = false;
 		this.url = url;  //URL is included for ease of creating the hyperlinks when writing to excel file
 		this.pentesterComments = "";
 		this.evidence = "";
@@ -58,6 +60,7 @@ public class ChecklistEntry implements Serializable {
 		this.howToTestHTML = howToTestHTML;
 		this.referencesHTML = referencesHTML;
 		this.exclusion = false;
+		this.testcaseCompleted = false;
 		this.url = url;  //URL is included for ease of creating the hyperlinks when writing to excel file
 		this.pentesterComments = "";
 		this.evidence = "";
@@ -96,9 +99,13 @@ public class ChecklistEntry implements Serializable {
 	
 	public Boolean isExcluded() {return this.exclusion;}
 
+	public Boolean isTestcaseCompleted(){return this.testcaseCompleted;}
+
 	public void setExclusion(Boolean value){
 		this.exclusion = value;
 	}
+
+	public void setTestCaseCompleted(Boolean value){ this.testcaseCompleted = value;}
 
 	public void setPenTesterComments(String comments) {
 		// New comments are appended to prevent overwriting existing comments

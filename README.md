@@ -28,7 +28,7 @@ Autowasp Logger tab gives penetration testers the ability to extract and consoli
 
 # Prerequisites #
 
- - Burp Suite Community (BurpScanner logging not available) or Professional
+ - Burp Suite Professional
 
 # Dependencies #
 
@@ -76,8 +76,6 @@ mvn clean compile assembly:single
 ## Installing the jar
  1. Download the release build [here](https://github.com/govtech-csg/Autowasp/releases).
  2. Open Burp Suite.
-	 - Community version: 
-		 - Temporary project with default/preferred settings
 	 - Professional version: 
 		 - Either temporary project or new/existing project
 		 - Default/preferred settings

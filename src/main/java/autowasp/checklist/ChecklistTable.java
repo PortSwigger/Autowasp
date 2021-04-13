@@ -32,7 +32,7 @@ public class ChecklistTable extends JTable {
 		this.extender = extender;
 		//Even parameters are default values for each column, odd parameters are max value for that column
 		//Just need to make sure that the max value >= Default values or things are gonna be abit messy.
-		setColumnWidths(200, 300, 100, 200, 1450, 2000, 75, Integer.MAX_VALUE);
+		setColumnWidths(200, 300, 200, 300, 1350, 1800, 500, 600, 200, 300);
 	}
 
 	public void setColumnWidths(int... widths) {

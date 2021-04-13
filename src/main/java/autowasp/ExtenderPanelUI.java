@@ -18,25 +18,12 @@ package autowasp;
 
 import burp.IMessageEditor;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Desktop;
+import java.awt.*;
 
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import javax.swing.JButton;
-import javax.swing.JEditorPane;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.HyperlinkEvent;
 import java.io.IOException;
@@ -100,13 +87,13 @@ public class ExtenderPanelUI implements Runnable{
 
 	// This method setup the top panel view of Autowasp
 	private void setupTopPanel() {
-        JPanel topPanel = new JPanel(new BorderLayout(10, 10));
+        //JPanel topPanel = new JPanel(new BorderLayout(10, 10));
+        JPanel topPanel = new JPanel(new GridLayout(4, 0));
         topPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
-        
+
         JPanel setupPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
         setupPanel.add(new JLabel("Target:", SwingConstants.LEFT), BorderLayout.LINE_START);
-        hostField = new JTextField("", 50);
-        setupPanel.add(hostField);
+        hostField = new JTextField("", 15);
         JButton addToScopeButton = new JButton("Add Target to Scope");
         addToScopeButton.addActionListener(e -> {
             // Filter the URL and add to scope
@@ -185,7 +172,6 @@ public class ExtenderPanelUI implements Runnable{
         JPanel scanStatusPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
         scanStatusPanel.add(new JLabel("Status: ", SwingConstants.LEFT));
         scanStatusLabel = new JLabel("Ready to scan", SwingConstants.LEFT);
-        scanStatusPanel.add(scanStatusLabel);
 
         //Checklist Panel: [Generate Checklist from Web] [Cancel Fetch] [Generate Checklist from Local Copy] [Save Local Copy]
         JPanel testingPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 10));
@@ -360,9 +346,12 @@ public class ExtenderPanelUI implements Runnable{
         deleteInstanceButton = new JButton("Delete Instance");
         deleteInstanceButton.addActionListener(e -> extender.instanceTable.deleteInstance());
 
+        setupPanel.add(hostField);
         setupPanel.add(addToScopeButton);
         setupPanel.add(enableScanningButton);
-        setupPanel.add(scanStatusPanel);
+
+        scanStatusPanel.add(scanStatusLabel);
+
         testingPanel.add(generateWebChecklistButton);
         testingPanel.add(cancelFetchButton);
         testingPanel.add(generateLocalChecklistButton);
@@ -379,9 +368,10 @@ public class ExtenderPanelUI implements Runnable{
         disabledInitialButtons();
 
         // Add setup panel and status panel to top panel
-        topPanel.add(setupPanel, BorderLayout.PAGE_START);
-        topPanel.add(testingPanel, BorderLayout.LINE_START);
-        topPanel.add(miscPanel, BorderLayout.PAGE_END);
+        topPanel.add(setupPanel);
+        topPanel.add(scanStatusPanel);
+        topPanel.add(testingPanel);
+        topPanel.add(miscPanel);
         gtScannerSplitPane.setLeftComponent(topPanel);
 	}
 
