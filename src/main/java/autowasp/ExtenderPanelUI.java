@@ -454,6 +454,7 @@ public class ExtenderPanelUI implements Runnable{
         summaryTextPane = new JTextPane();
         summaryTextPane.setEditable(false);
         summaryTextPane.setContentType("text/html");
+        summaryTextPane.putClientProperty("html.disable", null);
         summaryTextPane.addHyperlinkListener(e -> {
             if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 if(Desktop.isDesktopSupported()) {
@@ -472,6 +473,7 @@ public class ExtenderPanelUI implements Runnable{
         howToTestTextPane = new JEditorPane();
         howToTestTextPane.setEditable(false);
         howToTestTextPane.setContentType("text/html");
+        howToTestTextPane.putClientProperty("html.disable", null);
         howToTestTextPane.addHyperlinkListener(e -> {
             if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 if(Desktop.isDesktopSupported()) {
@@ -489,6 +491,7 @@ public class ExtenderPanelUI implements Runnable{
         referencesTextPane = new JTextPane();
         referencesTextPane.setEditable(false);
         referencesTextPane.setContentType("text/html");
+        referencesTextPane.putClientProperty("html.disable", null);
         referencesTextPane.addHyperlinkListener(e -> {
             if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
                 if(Desktop.isDesktopSupported()) {
