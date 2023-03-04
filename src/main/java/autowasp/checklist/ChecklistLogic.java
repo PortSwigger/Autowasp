@@ -44,7 +44,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.common.usermodel.HyperlinkType;
 
 /* Notes:
- * 1. The URL for the OWASP content page is currently pointing to our own branch of OWASP's repository. 
+ * 1. changed data source url to OWASP github repo
  * 2. The "fetch checklist" function currently takes around 3 minutes to fetch the data.
  */
 
@@ -52,7 +52,7 @@ public class ChecklistLogic implements Serializable {
 	
 	private final Autowasp extender;
 	private Document anyPage;
-	public final String GITHUB_REPO_URL = "https://github.com/GovTech-CSG/wstg/blob/master/document/4-Web_Application_Security_Testing/README.md";
+	public final String GITHUB_REPO_URL = "https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/README.md";
 
 	public ChecklistLogic(Autowasp extender) {
 		this.extender = extender;
