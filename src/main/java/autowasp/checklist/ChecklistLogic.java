@@ -52,7 +52,7 @@ public class ChecklistLogic implements Serializable {
 	
 	private final Autowasp extender;
 	private Document anyPage;
-	public final String GITHUB_REPO_URL = "https://github.com/GovTech-CSG/wstg/blob/master/document/4-Web_Application_Security_Testing/README.md";
+	public final String GITHUB_REPO_URL = "https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/README.md";
 
 	public ChecklistLogic(Autowasp extender) {
 		this.extender = extender;
